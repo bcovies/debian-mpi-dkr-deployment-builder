@@ -1,0 +1,44 @@
+version: '3.4'
+services:
+
+  master:
+    image: teste
+    tty: true
+    networks: 
+      default:
+        ipv4_address: 172.28.0.2
+      
+    volumes: 
+      - "sharedVol:/opt/"
+
+  slave1:
+    image: teste
+    tty: true
+    networks: 
+      default:
+        ipv4_address: 172.28.0.3
+    volumes: 
+      - "sharedVol:/opt/"
+
+  slave2:
+    image: teste
+    tty: true
+    networks: 
+      default:
+        ipv4_address: 172.28.0.4
+    volumes: 
+      - "sharedVol:/opt/"
+
+networks: 
+  default:
+    ipam:
+      config:
+        - subnet: "172.28.0.0/16"
+      
+volumes: 
+  sharedVol:
+    driver: "local"
+    driver_opts: 
+      type: "nfs"
+      o: "bind"
+      device: "/opt/docker/mpi"
