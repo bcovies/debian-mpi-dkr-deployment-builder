@@ -2,7 +2,7 @@ version: '3.4'
 services:
 
   master:
-    image: teste
+    image: mpi-debian
     tty: true
     networks: 
       default:
@@ -12,7 +12,7 @@ services:
       - "sharedVol:/opt/"
 
   slave1:
-    image: teste
+    image: mpi-debian
     tty: true
     networks: 
       default:
@@ -21,7 +21,7 @@ services:
       - "sharedVol:/opt/"
 
   slave2:
-    image: teste
+    image: mpi-debian
     tty: true
     networks: 
       default:
