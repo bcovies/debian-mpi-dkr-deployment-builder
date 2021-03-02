@@ -46,7 +46,17 @@ mpiuser@33c3f7734510:/opt$ mpirun -np 30 --hostfile /home/mpiuser/hostfile ./a.o
 ## Para rodar entre os servidores
  ``` mpirun -np 2 --hostfile /home/mpiuser/hostfile ./a.out ```
 
- ## Observações:
+
+## Fique atento!
+
+Todas as máquinas devem compartilhar um volume, e com isso rodar todos scripts de lá.
+Para isto, no arquivo compose, é feita a adição de um volume nomeado.
+```
+   device: "/opt/docker/volume/debian-mpi-dkr-deployment-builder" 
+```
+Que é onde é montado NA SUA MÁQUINA. Sinta-se livre (e obrigado) a modificá-lo.
+
+## Observações:
   - O hostfile está presente no  ``` /home/mpiuser/hostfile ``` e pode ser modificado a hora que desejar.
   - A instalação conta com a máquina master e mais 2 nodes workers.
      - Master 
