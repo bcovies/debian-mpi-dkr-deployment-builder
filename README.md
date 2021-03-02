@@ -49,6 +49,12 @@ mpiuser@33c3f7734510:/opt$ mpirun -np 30 --hostfile /home/mpiuser/hostfile ./a.o
 
 ## Fique atento!
 
+1 - Para buildar, utilize a tag ```mpi-debian```.
+
+Ou troque no arquivo compose pela tag que desejar:
+```
+image: mpi-debian
+```
 Todas as máquinas devem compartilhar um volume, e com isso rodar todos scripts de lá.
 Para isto, no arquivo compose, é feita a adição de um volume nomeado.
 ```
