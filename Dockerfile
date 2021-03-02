@@ -9,6 +9,7 @@ RUN echo root:mpiuser | chpasswd
 COPY ./mpi_folder/install.sh /
 COPY ./mpi_folder/keygen.sh /
 COPY ./mpi_folder/fingerprint.sh /
+COPY ./mpi_folder/hostfile /home/mpiuser/
 RUN chmod 777 fingerprint.sh
 RUN chmod 777 install.sh
 RUN chmod 777 keygen.sh
