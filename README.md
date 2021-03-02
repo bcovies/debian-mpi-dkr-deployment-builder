@@ -55,12 +55,17 @@ Ou troque no arquivo compose pela tag que desejar:
 ```
 image: mpi-debian
 ```
-Todas as máquinas devem compartilhar um volume, e com isso rodar todos scripts de lá.
+2 - Todas as máquinas devem compartilhar um volume, e com isso rodar todos scripts de lá.
 Para isto, no arquivo compose, é feita a adição de um volume nomeado.
 ```
    device: "/opt/docker/volume/debian-mpi-dkr-deployment-builder" 
 ```
 Que é onde é montado NA SUA MÁQUINA. Sinta-se livre (e obrigado) a modificá-lo.
+
+3 - Caso esteja dando errado, provavelmente há uma rede já existente na faixa em que foi utilizada. Há duas opções, ou você deleta a sua rede já existente, ou troca todos os arquivos em que há definida esta rede. Dos quais são:
+ - ```docker-compose.yml```
+ - ```install.sh```
+ - ```hostfile```
 
 ## Observações:
   - O hostfile está presente no  ``` /home/mpiuser/hostfile ``` e pode ser modificado a hora que desejar.
