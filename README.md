@@ -5,6 +5,8 @@ Este construtor visa a substituição da utilização da máquina virtual.
 
 Para sua utilização é necessário a instalação do docker-compose.
 
+![Alt Text](/gifs/usage.gif)
+
 ### Exemplo de uso
 ``` 
 mpiuser@33c3f7734510:/opt$ mpirun -np 30 --hostfile /home/mpiuser/hostfile ./a.out
